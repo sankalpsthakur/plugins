@@ -1,0 +1,14 @@
+{
+  "preCommand": [
+    {
+      "name": "validate-strategy-prereqs",
+      "description": "Ensure DMA and ESRS prerequisites before compute/export commands."
+    }
+  ],
+  "postCommand": [
+    {
+      "name": "record-strategy-artifacts",
+      "description": "Capture DMA snapshots, compute outputs, and export manifests for assurance."
+    }
+  ]
+}

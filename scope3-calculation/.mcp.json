@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "calc-local": {
+      "transport": "stdio",
+      "command": "node",
+      "args": ["tools/calc-mcp.js"]
+    }
+  }
+}

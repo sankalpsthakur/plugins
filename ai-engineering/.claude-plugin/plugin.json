@@ -1,0 +1,13 @@
+{
+  "name": "ai-engineering",
+  "version": "0.1.0",
+  "description": "Model engineering workflows across training, inference, optimization, RAG, and serving.",
+  "author": "Sankalp",
+  "homepage": "https://github.com/sankalpsthakur/plugins",
+  "repository": "https://github.com/sankalpsthakur/plugins",
+  "license": "MIT",
+  "keywords": ["ml", "llm", "rag", "serving", "optimization"],
+  "commandsPath": "commands",
+  "agentsPath": "agents",
+  "skillsPath": "skills"
+}

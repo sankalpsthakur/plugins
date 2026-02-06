@@ -1,0 +1,35 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Env / secrets
+.env
+.env.*
+
+# Artifacts / runtime state
+artifacts/
+state/
+content/approvals/
+crm/interactions/
+crm/outbox/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage/
+
+# Editors
+.vscode/
+.idea/
+

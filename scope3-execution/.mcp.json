@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "exec-local": {
+      "transport": "stdio",
+      "command": "node",
+      "args": ["tools/exec-mcp.js"]
+    }
+  }
+}

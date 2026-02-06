@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "strategy-local": {
+      "transport": "stdio",
+      "command": "node",
+      "args": ["tools/strategy-mcp.js"]
+    }
+  }
+}
