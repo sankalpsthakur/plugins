@@ -12,84 +12,31 @@ Quick navigation:
 
 ```
 CEO (You)
- └─ Chief of Staff (Claude)
-     ├─ Engineering Team   → ai-engineering, quality-monitoring
-     ├─ Marketing Team     → growth-content
-     ├─ Sales Team         → sales-outreach
-     └─ ESG Team           → scope3-strategy, scope3-calculation, scope3-execution, scope12-accounting
+ |
+ +-- Chief of Staff (Claude)
+      |
+      +-- Engineering ----> ai-engineering         (50 skills)
+      |                +--> quality-monitoring       (6 skills)
+      |
+      +-- Marketing ------> growth-content          (10 skills)
+      |
+      +-- Sales ----------> sales-outreach           (1 skill)
+      |
+      +-- ESG ------------> scope3-strategy          (7 domain skills)
+                       +--> scope3-calculation       (12 domain skills)
+                       +--> scope3-execution          (8 domain skills)
+                       +--> scope12-accounting        (4 domain skills)
 ```
 
-```mermaid
-flowchart TB
-    CEO["👤 CEO<br/><small>Sets direction, approves</small>"]
-    COS["🧠 Chief of Staff<br/><small>Claude · coordinates teams</small>"]
-
-    CEO --> COS
-
-    subgraph TEAMS["TEAMS — run daily, take projects, coordinate updates"]
-        direction LR
-        T_ENG["⚙️ Engineering"]
-        T_MKT["📣 Marketing"]
-        T_SALES["💰 Sales"]
-        T_ESG["🌍 ESG"]
-    end
-
-    COS --> T_ENG
-    COS --> T_MKT
-    COS --> T_SALES
-    COS --> T_ESG
-
-    subgraph PLUGINS["PLUGINS — self-sufficient bundles"]
-        direction LR
-        P_AI["ai-engineering<br/><small>v0.1.0 · 51 skills</small>"]
-        P_QM["quality-monitoring<br/><small>v0.1.0 · 7 skills</small>"]
-        P_GC["growth-content<br/><small>v0.1.0 · 11 skills</small>"]
-        P_SO["sales-outreach<br/><small>v0.1.0 · 2 skills</small>"]
-        P_S3S["scope3-strategy<br/><small>v0.5.1 · 8 skills</small>"]
-        P_S3C["scope3-calculation<br/><small>v0.4.1 · 13 skills</small>"]
-        P_S3E["scope3-execution<br/><small>v0.4.1 · 9 skills</small>"]
-        P_S12["scope12-accounting<br/><small>v0.1.0 · 5 skills</small>"]
-    end
-
-    T_ENG -->|selects| P_AI
-    T_ENG -->|selects| P_QM
-    T_MKT -->|selects| P_GC
-    T_SALES -->|selects| P_SO
-    T_ESG -->|selects| P_S3S
-    T_ESG -->|selects| P_S3C
-    T_ESG -->|selects| P_S3E
-    T_ESG -->|selects| P_S12
-
-    subgraph SKILLS["SKILLS & SLASH COMMANDS — inside plugins"]
-        direction LR
-        SK["106 bundled skills"]
-        CMD["/workflows:plugin:action<br/><small>slash commands</small>"]
-    end
-
-    P_AI -->|contains| SK
-    P_QM -->|contains| SK
-    P_GC -->|contains| SK
-    P_SO -->|contains| SK
-    P_S3S -->|contains| CMD
-    P_S3C -->|contains| CMD
-    P_S3E -->|contains| CMD
-    P_S12 -->|contains| CMD
-
-    subgraph MCP["MCP SERVERS & CONNECTORS"]
-        direction LR
-        MCP_S3["scope3 MCP servers<br/><small>strategy-mcp · calc-mcp · exec-mcp</small>"]
-        MCP_EXT["External connectors<br/><small>via .mcp.json</small>"]
-    end
-
-    SK -->|references| MCP_EXT
-    CMD -->|references| MCP_S3
-    CMD -->|references| MCP_EXT
 ```
-
-### Dependency Flow
-
-```
-CEO → Chief of Staff → Team → selects → Plugin → contains → Skills + /Commands → references → MCP servers/connectors
+Plugin internals
+================
+plugin.json ─┬─ agents/*.md        Agent definitions
+              ├─ commands/*.md      Slash commands (/workflows:plugin:action)
+              ├─ skills/*/SKILL.md  Knowledge packs (106 total)
+              ├─ .mcp.json          MCP server/connector config
+              ├─ hooks/hooks.json   Pre/post command hooks (scope3 only)
+              └─ tools/*-mcp.js     MCP server impl (scope3 only)
 ```
 
 | Layer | What | How it works |
@@ -172,34 +119,6 @@ Domain plugins contain their own internal skills (not from the shared skills poo
 
 ---
 
-## Plugin Layout
-
-```
-<plugin>/
-├── .claude-plugin/
-│   └── plugin.json          # name, version, description, entrypoints
-├── agents/
-│   └── *.md                 # YAML frontmatter: name, description
-├── commands/
-│   └── *.md                 # YAML frontmatter: name, description, allowed-tools
-├── skills/
-│   ├── <plugin-name>/
-│   │   └── SKILL.md         # Main skill manifest (lists all bundled skills)
-│   ├── <skill-a>/
-│   │   └── SKILL.md         # Individual skill knowledge pack
-│   └── <skill-b>/
-│       └── SKILL.md
-├── .mcp.json                # MCP server/connector config (optional)
-├── hooks/
-│   └── hooks.json           # Pre/post command hooks (scope3 only)
-└── tools/
-    └── *-mcp.js             # MCP server implementation (scope3 only)
-```
-
-Each plugin is **self-sufficient** — all skills are bundled locally inside the plugin's `skills/` directory. No external path references.
-
----
-
 ## Slash Commands
 
 ### ai-engineering
@@ -241,37 +160,191 @@ Each plugin is **self-sufficient** — all skills are bundled locally inside the
 
 ---
 
-## Setup
+## Installation
 
 ### Prerequisites
 
 - Node.js 18+
-- Python 3.10+
-- `jq` (used by quality-monitoring scripts)
-- Optional: Playwright (for visual test suites)
+- Git
 
-### 1. Clone and verify structure
+### Clone
 
 ```bash
-# Each plugin should have .claude-plugin/plugin.json
-for d in */; do
-  if [ -f "$d.claude-plugin/plugin.json" ]; then
-    echo "OK: $d"
-  else
-    echo "MISSING: $d"
-  fi
+git clone git@github.com:sankalpsthakur/plugins.git
+cd plugins
+```
+
+### Claude Code (full plugin support)
+
+```bash
+# 1. Add the marketplace
+/plugin marketplace add sankalpsthakur/plugins
+
+# 2. Install plugins (format: plugin-name@marketplace-name)
+/plugin install ai-engineering@sankalpsthakur-plugins
+/plugin install growth-content@sankalpsthakur-plugins
+/plugin install quality-monitoring@sankalpsthakur-plugins
+/plugin install sales-outreach@sankalpsthakur-plugins
+/plugin install scope3-strategy@sankalpsthakur-plugins
+/plugin install scope3-calculation@sankalpsthakur-plugins
+/plugin install scope3-execution@sankalpsthakur-plugins
+/plugin install scope12-accounting@sankalpsthakur-plugins
+```
+
+Or from a local checkout:
+
+```bash
+# Load a plugin for a single session
+claude --plugin-dir ./ai-engineering
+
+# Or install from local path
+for d in ai-engineering growth-content quality-monitoring sales-outreach \
+         scope3-strategy scope3-calculation scope3-execution scope12-accounting; do
+  claude plugin install --scope user ./$d
 done
 ```
 
-### 2. Configure environment variables
+### OpenAI Codex CLI (MCP servers only)
 
-Create a local env file:
+Codex has no plugin system. Add each plugin's MCP servers manually:
 
 ```bash
-cp .env.plugins.example .env.plugins.local
+# scope3 family (bundled MCP servers)
+codex mcp add scope3-strategy   -- node ./scope3-strategy/tools/strategy-mcp.js
+codex mcp add scope3-calculation -- node ./scope3-calculation/tools/calc-mcp.js
+codex mcp add scope3-execution  -- node ./scope3-execution/tools/exec-mcp.js
+
+# Or edit ~/.codex/config.toml directly:
+# [mcp_servers.scope3-calculation]
+# command = "node"
+# args = ["./plugins/scope3-calculation/tools/calc-mcp.js"]
 ```
 
-Required keys by plugin:
+### Google Antigravity (MCP servers only)
+
+Edit `~/.gemini/antigravity/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "scope3-strategy": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-strategy/tools/strategy-mcp.js"]
+    },
+    "scope3-calculation": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-calculation/tools/calc-mcp.js"]
+    },
+    "scope3-execution": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-execution/tools/exec-mcp.js"]
+    }
+  }
+}
+```
+
+### Cursor (MCP servers only)
+
+Add to `~/.cursor/mcp.json` or `.cursor/mcp.json` in project root:
+
+```json
+{
+  "mcpServers": {
+    "scope3-strategy": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-strategy/tools/strategy-mcp.js"]
+    },
+    "scope3-calculation": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-calculation/tools/calc-mcp.js"]
+    },
+    "scope3-execution": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-execution/tools/exec-mcp.js"]
+    }
+  }
+}
+```
+
+### Windsurf (MCP servers only)
+
+Add to `~/.codeium/windsurf/mcp_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "scope3-strategy": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-strategy/tools/strategy-mcp.js"]
+    },
+    "scope3-calculation": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-calculation/tools/calc-mcp.js"]
+    },
+    "scope3-execution": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-execution/tools/exec-mcp.js"]
+    }
+  }
+}
+```
+
+### Cline (MCP servers only)
+
+Open Cline > MCP Servers > Configure, then add:
+
+```json
+{
+  "mcpServers": {
+    "scope3-strategy": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-strategy/tools/strategy-mcp.js"]
+    },
+    "scope3-calculation": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-calculation/tools/calc-mcp.js"]
+    },
+    "scope3-execution": {
+      "command": "node",
+      "args": ["/path/to/plugins/scope3-execution/tools/exec-mcp.js"]
+    }
+  }
+}
+```
+
+### Continue.dev (MCP servers only)
+
+Add to `~/.continue/config.json`:
+
+```json
+{
+  "mcpServers": [
+    { "name": "scope3-strategy",    "command": "node", "args": ["/path/to/plugins/scope3-strategy/tools/strategy-mcp.js"] },
+    { "name": "scope3-calculation", "command": "node", "args": ["/path/to/plugins/scope3-calculation/tools/calc-mcp.js"] },
+    { "name": "scope3-execution",   "command": "node", "args": ["/path/to/plugins/scope3-execution/tools/exec-mcp.js"] }
+  ]
+}
+```
+
+### Compatibility matrix
+
+```
+                  Plugins  Skills  Commands  Agents  MCP Servers  Hooks
+Claude Code         Y        Y       Y        Y         Y          Y
+Codex CLI           -        -       -        -         Y          -
+Antigravity         -        -       -        -         Y          -
+Cursor              -        -       -        -         Y          -
+Windsurf            -        -       -        -         Y          -
+Cline               -        -       -        -         Y          -
+Continue.dev        -        -       -        -         Y          -
+Aider               -        -       -        -         -          -
+```
+
+Only Claude Code gets the full plugin experience (skills, agents, commands, hooks). All other harnesses can consume the MCP servers from the scope3 family. The general-purpose plugins (ai-engineering, growth-content, quality-monitoring, sales-outreach) use external MCP connectors defined in `.mcp.json` — configure those separately per harness.
+
+---
+
+## Environment Variables
 
 | Plugin | Required Env Vars |
 |--------|-------------------|
@@ -282,44 +355,15 @@ Required keys by plugin:
 | `scope3-*` | No external keys (self-contained MCP servers) |
 | `scope12-accounting` | No external keys |
 
-Load into your shell:
+---
+
+## Validation
 
 ```bash
-set -a && source .env.plugins.local && set +a
-```
-
-### 3. Validate the bundle
-
-```bash
+# Validate plugin structure
 python3 scripts/validate_bundle.py --mcp-selftest
-```
 
-### 4. Test MCP servers (scope3 plugins)
-
-```bash
-# Each scope3 plugin has a tools/*-mcp.js that speaks JSON-RPC 2.0 over stdio
+# Smoke-test scope3 MCP servers
 echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05"}}' | \
   node scope3-calculation/tools/calc-mcp.js
 ```
-
-### 5. Compose teams
-
-Teams are logical groupings of plugins. Example team compositions:
-
-```
-Engineering Team:  ai-engineering + quality-monitoring
-Marketing Team:    growth-content
-Sales Team:        sales-outreach
-ESG Team:          scope3-strategy + scope3-calculation + scope3-execution + scope12-accounting
-```
-
-Use Claude Code's team features to orchestrate multi-plugin workflows with parallel agent swarms.
-
----
-
-## Architecture Notes
-
-- **MCP Servers** (scope3 family): Zero-dependency Node.js, LSP-style `Content-Length` framing + JSON-RPC 2.0. Each exposes `*.health` and `*.sha256` tools.
-- **Hooks** (scope3 family): Declared in `hooks/hooks.json` with `preCommand` and `postCommand` arrays. Currently declaration-only (no runtime scripts).
-- **Plugin.json schema**: scope3 uses flat keys (`"commands": "commands"`), scope12/general use nested `"entrypoints"` or `*Path` suffixed keys. Both patterns work.
-- **Skill self-sufficiency**: Every skill referenced by a plugin exists as a local `skills/<name>/SKILL.md` inside that plugin. No external path dependencies.
