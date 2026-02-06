@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:disclosure-screenshot-intel
+name: disclosure-screenshot-intel
 description: Ingest public disclosures, render screenshot evidence, and extract score signals so suppliers with strong public data can skip redundant surveys.
 allowed-tools:
   - Bash

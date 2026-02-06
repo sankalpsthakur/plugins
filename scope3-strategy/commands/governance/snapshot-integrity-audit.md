@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:snapshot-integrity-audit
+name: snapshot-integrity-audit
 description: Audit DMA snapshot integrity and ensure export chain uses finalized snapshot-bound reports.
 allowed-tools:
   - Bash

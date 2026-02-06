@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:csrd-dma-first-precollection-guidance
+name: csrd-dma-first-precollection-guidance
 description: Build classic CSRD strategy guidance before data collection with DMA-first scoping, IRO hypotheses, and evidence-ready collection controls.
 allowed-tools:
   - Read

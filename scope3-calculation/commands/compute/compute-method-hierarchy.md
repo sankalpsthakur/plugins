@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:compute-method-hierarchy
+name: compute-method-hierarchy
 description: Run and audit `/api/lca/compute` with exact method-selection hierarchy, mapping behavior, and emissions formulas.
 allowed-tools:
   - Read

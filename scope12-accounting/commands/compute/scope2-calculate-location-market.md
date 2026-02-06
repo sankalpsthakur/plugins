@@ -1,5 +1,5 @@
 ---
-name: workflows:scope12-accounting:scope2-calculate-location-market
+name: scope2-calculate-location-market
 description: Calculate Scope 2 location-based and market-based emissions for purchased electricity, steam, heat, and cooling with evidence-backed contractual claims.
 allowed-tools:
   - Read

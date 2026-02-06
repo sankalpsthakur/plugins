@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:overrides-adjustments-governance
+name: overrides-adjustments-governance
 description: Enforce controlled override approvals and adjustment restatements with exact endpoint/state semantics.
 allowed-tools:
   - Read

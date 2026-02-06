@@ -1,5 +1,5 @@
 ---
-name: workflows:ai-engineering:build-rag-stack
+name: build-rag-stack
 description: Build or refresh RAG pipeline using chroma/faiss/qdrant/pinecone with sentence-transformers embeddings.
 allowed-tools:
   - Read

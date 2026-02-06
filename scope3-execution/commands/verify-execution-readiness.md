@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:verify-execution-readiness
+name: verify-execution-readiness
 description: Verify encryption prerequisites, period-lock state, and endpoint health before executing pipeline, OCR, or reporting commands.
 allowed-tools:
   - Bash

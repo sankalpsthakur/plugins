@@ -1,5 +1,5 @@
 ---
-name: workflows:growth-content:meme-ideation-batch
+name: meme-ideation-batch
 description: Generate queue-ready meme/content batch proposals from zeitgeist and local template inventory.
 allowed-tools:
   - Read

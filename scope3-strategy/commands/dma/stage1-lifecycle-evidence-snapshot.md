@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:dma-stage1-lifecycle-evidence-snapshot
+name: stage1-lifecycle-evidence-snapshot
 description: "Execute full Stage 1 DMA lifecycle: assessment, IROs, scoring, matrix, boundary, evidence linking, and snapshot finalization."
 allowed-tools:
   - Read

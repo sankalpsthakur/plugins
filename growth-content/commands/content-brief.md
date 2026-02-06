@@ -1,5 +1,5 @@
 ---
-name: workflows:growth-content:content-brief
+name: content-brief
 description: Produce campaign-ready content briefs from positioning, channel goals, and audience constraints.
 allowed-tools:
   - Read

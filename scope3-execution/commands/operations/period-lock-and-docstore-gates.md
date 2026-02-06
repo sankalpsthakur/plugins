@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:period-lock-and-docstore-gates
+name: period-lock-and-docstore-gates
 description: Validate execution period-lock enforcement and docstore prerequisites before write operations.
 allowed-tools:
   - Bash

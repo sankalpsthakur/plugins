@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:compute-materiality-anomaly-sequence
+name: compute-materiality-anomaly-sequence
 description: Execute ESRS compute, then materiality scoring, then anomaly scan with strict prerequisite gates.
 allowed-tools:
   - Read

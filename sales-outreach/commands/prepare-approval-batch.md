@@ -1,5 +1,5 @@
 ---
-name: workflows:sales-outreach:prepare-approval-batch
+name: prepare-approval-batch
 description: Convert outreach proposals into approval inbox requests with explicit APPROVE/REJECT contract.
 allowed-tools:
   - Read

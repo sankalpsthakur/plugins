@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:refresh-summary-and-replay
+name: refresh-summary-and-replay
 description: Reconcile live summary, run history, and as-of replay outputs for financial-grade reproducibility checks.
 allowed-tools:
   - Read

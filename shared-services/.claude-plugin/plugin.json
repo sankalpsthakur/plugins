@@ -1,0 +1,6 @@
+{
+  "name": "shared-services",
+  "version": "0.1.0",
+  "description": "Shared MCP servers (sequential-thinking, nano-banana) used across multiple plugins.",
+  "author": { "name": "Sankalp Thakur" }
+}

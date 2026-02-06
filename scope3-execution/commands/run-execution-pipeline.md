@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:run-execution-pipeline
+name: run-execution-pipeline
 description: Run lock-aware pipeline orchestration using exact backend stage endpoints and validate each stage outcome.
 allowed-tools:
   - Bash

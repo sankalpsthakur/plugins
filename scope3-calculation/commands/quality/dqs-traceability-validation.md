@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:dqs-traceability-validation
+name: dqs-traceability-validation
 description: Validate DQS scoring, trace payload completeness, and immutable replay behavior across run/summary endpoints.
 allowed-tools:
   - Read

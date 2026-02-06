@@ -1,5 +1,5 @@
 ---
-name: workflows:quality-monitoring:request-human-approval
+name: request-human-approval
 description: Create a human approval request for failed quality gates or explicit override decisions.
 allowed-tools:
   - Read

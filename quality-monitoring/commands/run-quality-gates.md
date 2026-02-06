@@ -1,5 +1,5 @@
 ---
-name: workflows:quality-monitoring:run-quality-gates
+name: run-quality-gates
 description: Run automated quality gates, generate a gate report, and block release on failing checks unless a human override is approved.
 allowed-tools:
   - Read

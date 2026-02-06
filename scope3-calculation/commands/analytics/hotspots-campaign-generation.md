@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:hotspots-campaign-generation
+name: hotspots-campaign-generation
 description: Generate hotspot and gap outputs, then snapshot collection campaigns from high-impact low-DQS inventory rows.
 allowed-tools:
   - Read

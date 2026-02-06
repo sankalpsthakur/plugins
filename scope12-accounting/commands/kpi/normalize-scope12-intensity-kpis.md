@@ -1,5 +1,5 @@
 ---
-name: workflows:scope12-accounting:normalize-scope12-intensity-kpis
+name: normalize-scope12-intensity-kpis
 description: Compute normalized Scope 1/2 KPI intensities with boundary alignment, rebasing controls, and constant-currency comparability.
 allowed-tools:
   - Read

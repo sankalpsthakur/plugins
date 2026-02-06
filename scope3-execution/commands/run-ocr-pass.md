@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:run-ocr-pass
+name: run-ocr-pass
 description: Execute OCR extraction plus field-level provenance attachment using render, OCR blocks, and provenance endpoints.
 allowed-tools:
   - Bash

@@ -1,5 +1,5 @@
 ---
-name: workflows:scope12-accounting:scope1-calculate-ledger
+name: scope1-calculate-ledger
 description: Calculate Scope 1 direct emissions with explicit formulas for stationary, mobile, process, and fugitive sources, including biogenic separation and gas-level GWP controls.
 allowed-tools:
   - Read

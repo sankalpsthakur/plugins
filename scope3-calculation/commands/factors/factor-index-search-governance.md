@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:factor-index-search-governance
+name: factor-index-search-governance
 description: Build and validate factor catalogs, semantic/regex search, and index store compatibility before compute.
 allowed-tools:
   - Read

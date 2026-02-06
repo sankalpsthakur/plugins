@@ -1,5 +1,5 @@
 ---
-name: workflows:scope12-accounting:publish-scope12-report-pack
+name: publish-scope12-report-pack
 description: Produce an audit-ready Scope 1/2 reporting pack with tie-outs, market-based coverage disclosure, and evidence-linked claims.
 allowed-tools:
   - Read

@@ -1,5 +1,5 @@
 ---
-name: workflows:growth-content:campaign-audit
+name: campaign-audit
 description: Audit campaign performance and recommend next experiment backlog from current metrics and funnel outputs.
 allowed-tools:
   - Read

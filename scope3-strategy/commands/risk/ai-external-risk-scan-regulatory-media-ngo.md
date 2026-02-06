@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:ai-external-risk-scan-regulatory-media-ngo
+name: ai-external-risk-scan-regulatory-media-ngo
 description: Run AI-powered external risk scanning across regulatory, media, and NGO sources and convert validated signals into DMA-ready evidence.
 allowed-tools:
   - Read

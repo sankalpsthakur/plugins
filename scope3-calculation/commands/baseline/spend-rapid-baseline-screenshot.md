@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:spend-rapid-baseline-screenshot
+name: spend-rapid-baseline-screenshot
 description: Produce a spend-first rapid baseline inventory screenshot packet with strict traceability and replay-safe controls.
 allowed-tools:
   - Read

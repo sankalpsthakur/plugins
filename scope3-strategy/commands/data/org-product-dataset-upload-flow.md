@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:org-product-dataset-upload-flow
+name: org-product-dataset-upload-flow
 description: Run org creation, product setup, and dataset ingestion using the exact strategy API payloads and parsing constraints.
 allowed-tools:
   - Read

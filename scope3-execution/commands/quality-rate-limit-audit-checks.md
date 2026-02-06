@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:quality-rate-limit-audit-checks
+name: quality-rate-limit-audit-checks
 description: Run deterministic quality anomaly checks, verify endpoint rate limits, and confirm audit trail emission for critical actions.
 allowed-tools:
   - Bash

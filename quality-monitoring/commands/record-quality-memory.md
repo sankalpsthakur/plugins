@@ -1,5 +1,5 @@
 ---
-name: workflows:quality-monitoring:record-memory
+name: record-quality-memory
 description: Append quality monitoring outcomes to persistent memory for trend analysis and future gate tuning.
 allowed-tools:
   - Read

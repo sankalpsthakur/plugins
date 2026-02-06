@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:export-and-evidence-pack-constraints
+name: export-and-evidence-pack-constraints
 description: Enforce export gate policy across evidence pack, ESRS CSV, iXBRL, and PDF report with snapshot integrity checks.
 allowed-tools:
   - Read

@@ -1,5 +1,5 @@
 ---
-name: workflows:quality-monitoring:run-visual-quality-monitoring
+name: run-visual-quality-monitoring
 description: Execute visual testing and regression checks, then write a visual QA summary artifact.
 allowed-tools:
   - Read

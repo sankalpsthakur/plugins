@@ -1,9 +1,8 @@
 {
   "mcpServers": {
     "strategy-local": {
-      "transport": "stdio",
-      "command": "node",
-      "args": ["tools/strategy-mcp.js"]
+      "command": "bash",
+      "args": ["-lc", "cd /Users/sankalp/Projects/plugins/scope3-strategy && node tools/strategy-mcp.js"]
     }
   }
 }

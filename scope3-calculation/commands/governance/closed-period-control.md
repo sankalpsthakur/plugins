@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:closed-period-control
+name: closed-period-control
 description: Verify closed-period behavior and force-gated recompute semantics for calculation jobs.
 allowed-tools:
   - Bash

@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:deep-tech-lca-physics-modeling
+name: deep-tech-lca-physics-modeling
 description: Execute deep-tech product and supply-chain physics modeling with material scope filters, primary measurements, and quantity-first method controls.
 allowed-tools:
   - Read

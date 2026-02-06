@@ -1,5 +1,5 @@
 ---
-name: workflows:scope12-accounting:period-close-restatement-controls
+name: period-close-restatement-controls
 description: Enforce close-period immutability, controlled restatements, and reproducible Scope 1/2 outputs with immutable evidence and factor provenance.
 allowed-tools:
   - Read

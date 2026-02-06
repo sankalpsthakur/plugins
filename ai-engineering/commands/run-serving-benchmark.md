@@ -1,5 +1,5 @@
 ---
-name: workflows:ai-engineering:run-serving-benchmark
+name: run-serving-benchmark
 description: Benchmark serving stacks (vLLM/sglang/llama.cpp/TensorRT-LLM) with standardized throughput and latency outputs.
 allowed-tools:
   - Read

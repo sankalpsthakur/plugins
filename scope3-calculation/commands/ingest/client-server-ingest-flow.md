@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:client-server-ingest-flow
+name: client-server-ingest-flow
 description: Execute the exact ingest lifecycle from upload through reconciliation and preview using the backend API contract.
 allowed-tools:
   - Read

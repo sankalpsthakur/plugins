@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:cascade-tier2-surveys
+name: cascade-tier2-surveys
 description: Orchestrate tier-2+ survey cascades using engagement records, non-response escalation tiers, and evidence-aware suppression from disclosure-first scoring.
 allowed-tools:
   - Bash

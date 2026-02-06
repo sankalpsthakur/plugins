@@ -1,5 +1,5 @@
 ---
-name: workflows:sales-outreach:launch-voice-qualification
+name: launch-voice-qualification
 description: Execute Retell-backed call qualification only for approved leads and persist transcript artifacts.
 allowed-tools:
   - Read

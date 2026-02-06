@@ -1,9 +1,8 @@
 {
   "mcpServers": {
     "calc-local": {
-      "transport": "stdio",
-      "command": "node",
-      "args": ["tools/calc-mcp.js"]
+      "command": "bash",
+      "args": ["-lc", "cd /Users/sankalp/Projects/plugins/scope3-calculation && node tools/calc-mcp.js"]
     }
   }
 }

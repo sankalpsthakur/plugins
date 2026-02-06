@@ -1,5 +1,5 @@
 ---
-name: workflows:sales-outreach:run-daily-revenue-cycle
+name: run-daily-revenue-cycle
 description: Run end-to-end daily revenue cycle from due leads to approved send requests and call follow-ups.
 allowed-tools:
   - Read

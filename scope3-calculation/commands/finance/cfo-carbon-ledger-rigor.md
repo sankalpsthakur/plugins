@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-calculation:cfo-carbon-ledger-rigor
+name: cfo-carbon-ledger-rigor
 description: Enforce CFO/audit-grade carbon ledger controls with immutable run replay, governance lineage, and trace-complete evidence snapshots.
 allowed-tools:
   - Read

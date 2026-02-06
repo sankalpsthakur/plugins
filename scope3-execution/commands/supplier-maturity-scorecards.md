@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:supplier-maturity-scorecards
+name: supplier-maturity-scorecards
 description: Build supplier maturity scorecards from deep-dive evidence and apply standardized engagement language through deterministic status updates.
 allowed-tools:
   - Bash

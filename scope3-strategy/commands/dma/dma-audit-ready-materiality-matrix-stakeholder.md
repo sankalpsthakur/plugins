@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-strategy:dma-audit-ready-materiality-matrix-stakeholder
+name: dma-audit-ready-materiality-matrix-stakeholder
 description: Execute DMA-first audit-ready materiality matrix with stakeholder engagement evidence, scoring governance, and finalization controls.
 allowed-tools:
   - Read

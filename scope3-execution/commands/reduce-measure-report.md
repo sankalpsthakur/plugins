@@ -1,5 +1,5 @@
 ---
-name: workflows:scope3-execution:reduce-measure-report
+name: reduce-measure-report
 description: Execute Measure -> Reduce -> Report verification sequence and gate report readiness on deterministic data and controls.
 allowed-tools:
   - Bash
