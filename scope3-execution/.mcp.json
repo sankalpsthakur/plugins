@@ -1,8 +1,9 @@
 {
   "mcpServers": {
     "exec-local": {
-      "command": "bash",
-      "args": ["-lc", "cd /Users/sankalp/Projects/plugins/scope3-execution && node tools/exec-mcp.js"]
+      "command": "node",
+      "args": ["tools/exec-mcp.js"],
+      "cwd": "${CLAUDE_PLUGIN_ROOT}"
     }
   }
 }
