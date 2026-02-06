@@ -2,18 +2,5 @@
   "name": "quality-monitoring",
   "version": "0.1.0",
   "description": "Workflow wrapper for quality gates, visual testing, human approvals, and persistent quality memory.",
-  "author": "Sankalp",
-  "homepage": "https://github.com/sankalpsthakur/plugins",
-  "repository": "https://github.com/sankalpsthakur/plugins",
-  "license": "MIT",
-  "keywords": [
-    "quality-gates",
-    "visual-testing",
-    "approval",
-    "memory",
-    "monitoring"
-  ],
-  "commandsPath": "commands",
-  "agentsPath": "agents",
-  "skillsPath": "skills"
+  "author": { "name": "Sankalp Thakur" }
 }

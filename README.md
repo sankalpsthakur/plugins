@@ -177,31 +177,30 @@ cd plugins
 ### Claude Code (full plugin support)
 
 ```bash
-# 1. Add the marketplace
-/plugin marketplace add sankalpsthakur/plugins
+# 1. Add marketplace (from GitHub or local checkout)
+claude plugin marketplace add sankalpsthakur/plugins   # from GitHub
+claude plugin marketplace add /path/to/plugins          # from local clone
 
-# 2. Install plugins (format: plugin-name@marketplace-name)
-/plugin install ai-engineering@sankalpsthakur-plugins
-/plugin install growth-content@sankalpsthakur-plugins
-/plugin install quality-monitoring@sankalpsthakur-plugins
-/plugin install sales-outreach@sankalpsthakur-plugins
-/plugin install scope3-strategy@sankalpsthakur-plugins
-/plugin install scope3-calculation@sankalpsthakur-plugins
-/plugin install scope3-execution@sankalpsthakur-plugins
-/plugin install scope12-accounting@sankalpsthakur-plugins
+# 2. Install plugins (name@marketplace-name)
+claude plugin install --scope project ai-engineering@sankalpsthakur-plugins
+claude plugin install --scope project growth-content@sankalpsthakur-plugins
+claude plugin install --scope project quality-monitoring@sankalpsthakur-plugins
+claude plugin install --scope project sales-outreach@sankalpsthakur-plugins
+claude plugin install --scope project scope3-strategy@sankalpsthakur-plugins
+claude plugin install --scope project scope3-calculation@sankalpsthakur-plugins
+claude plugin install --scope project scope3-execution@sankalpsthakur-plugins
+claude plugin install --scope project scope12-accounting@sankalpsthakur-plugins
+
+# 3. Verify
+claude plugin list
 ```
 
-Or from a local checkout:
+Scope options: `--scope user` (all projects), `--scope project` (shared via git), `--scope local` (gitignored).
+
+For a single session without installing:
 
 ```bash
-# Load a plugin for a single session
 claude --plugin-dir ./ai-engineering
-
-# Or install from local path
-for d in ai-engineering growth-content quality-monitoring sales-outreach \
-         scope3-strategy scope3-calculation scope3-execution scope12-accounting; do
-  claude plugin install --scope user ./$d
-done
 ```
 
 ### OpenAI Codex CLI (MCP servers only)

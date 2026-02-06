@@ -2,9 +2,5 @@
   "name": "scope12-accounting",
   "version": "0.1.1",
   "description": "Plugin for Scope 1/2 carbon accounting, KPI normalization, and reporting controls.",
-  "entrypoints": {
-    "commands": "commands",
-    "agents": "agents",
-    "skills": "skills"
-  }
+  "author": { "name": "Sankalp Thakur" }
 }

@@ -2,12 +2,5 @@
   "name": "growth-content",
   "version": "0.1.0",
   "description": "Growth and content workflows for campaign planning, meme batching, and experiment loops.",
-  "author": "Sankalp",
-  "homepage": "https://github.com/sankalpsthakur/plugins",
-  "repository": "https://github.com/sankalpsthakur/plugins",
-  "license": "MIT",
-  "keywords": ["growth", "content", "campaigns", "meme", "experiments"],
-  "commandsPath": "commands",
-  "agentsPath": "agents",
-  "skillsPath": "skills"
+  "author": { "name": "Sankalp Thakur" }
 }
