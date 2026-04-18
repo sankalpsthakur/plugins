@@ -1,0 +1,60 @@
+[
+  {
+    "_id": "2c4ba7a1-bd15-421b-8419-e421cffc7188",
+    "job_id": "bffb61c5-d1d2-43d3-9569-20e677d32b7f",
+    "row_index": 0,
+    "vendor": "Acme Corp",
+    "item_description": "Office supplies",
+    "gl_code": null,
+    "category": "Category 1",
+    "spend_original": 5000,
+    "currency_original": "USD",
+    "quantity": 100,
+    "unit": "kg",
+    "primary_data": null,
+    "data_quality_flags": [],
+    "_updated_at": "2026-02-07T11:13:28.048Z",
+    "_created_at": "2026-02-07T11:13:28.048Z"
+  },
+  {
+    "_id": "fb2e0008-0172-498d-8e07-81abd15338ce",
+    "job_id": "bffb61c5-d1d2-43d3-9569-20e677d32b7f",
+    "row_index": 1,
+    "vendor": "Beta Ltd",
+    "item_description": "Cloud hosting",
+    "gl_code": null,
+    "category": "Category 1",
+    "spend_original": 12000,
+    "currency_original": "EUR",
+    "quantity": null,
+    "unit": null,
+    "primary_data": null,
+    "data_quality_flags": [
+      "MISSING_QUANTITY",
+      "MISSING_UNIT"
+    ],
+    "_updated_at": "2026-02-07T11:13:28.049Z",
+    "_created_at": "2026-02-07T11:13:28.049Z"
+  },
+  {
+    "_id": "daf07b05-c9c1-4ab4-8d58-ee2c79079fc7",
+    "job_id": "bffb61c5-d1d2-43d3-9569-20e677d32b7f",
+    "row_index": 2,
+    "vendor": null,
+    "item_description": "Unknown item",
+    "gl_code": null,
+    "category": "Category 2",
+    "spend_original": 0,
+    "currency_original": null,
+    "quantity": 50,
+    "unit": "units",
+    "primary_data": null,
+    "data_quality_flags": [
+      "MISSING_VENDOR",
+      "MISSING_SPEND",
+      "MISSING_CURRENCY"
+    ],
+    "_updated_at": "2026-02-07T11:13:28.049Z",
+    "_created_at": "2026-02-07T11:13:28.049Z"
+  }
+]

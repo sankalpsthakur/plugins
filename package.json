@@ -1,0 +1,9 @@
+{
+  "name": "carbonkit",
+  "version": "0.1.0",
+  "description": "Open-source Claude Code SDK for end-to-end Scope 1/2/3 decarbonisation workflows",
+  "bin": {
+    "carbonkit": "./shared-services/tools/carbonkit-cli.js"
+  },
+  "license": "Apache-2.0"
+}

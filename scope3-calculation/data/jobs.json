@@ -1,0 +1,55 @@
+[
+  {
+    "_id": "bffb61c5-d1d2-43d3-9569-20e677d32b7f",
+    "filename": "test.csv",
+    "status": "DONE",
+    "row_count": 3,
+    "reporting_currency": "USD",
+    "reconciliation": {
+      "missing": {
+        "MISSING_VENDOR": 1,
+        "MISSING_DESCRIPTION": 0,
+        "MISSING_SPEND": 1,
+        "MISSING_CURRENCY": 1,
+        "MISSING_QUANTITY": 1,
+        "MISSING_UNIT": 1
+      },
+      "missing_pct": {
+        "MISSING_VENDOR": 0.3333333333333333,
+        "MISSING_DESCRIPTION": 0,
+        "MISSING_SPEND": 0.3333333333333333,
+        "MISSING_CURRENCY": 0.3333333333333333,
+        "MISSING_QUANTITY": 0.3333333333333333,
+        "MISSING_UNIT": 0.3333333333333333
+      },
+      "currencies": [
+        "USD",
+        "EUR"
+      ],
+      "units": [
+        "kg",
+        "units"
+      ],
+      "distinct_counts": {
+        "vendors": 3,
+        "items": 3
+      },
+      "flags": {
+        "MISSING_VENDOR": 1,
+        "MISSING_DESCRIPTION": 0,
+        "MISSING_SPEND": 1,
+        "MISSING_CURRENCY": 1,
+        "MISSING_QUANTITY": 1,
+        "MISSING_UNIT": 1
+      },
+      "rows_with_any_flag": 2,
+      "rows_clean": 1,
+      "spend_total": 17000,
+      "quantity_total": 150
+    },
+    "created_at": "2026-02-07T11:13:28.048Z",
+    "updated_at": "2026-02-07T11:13:28.048Z",
+    "_updated_at": "2026-02-07T11:13:28.049Z",
+    "_created_at": "2026-02-07T11:13:28.049Z"
+  }
+]
